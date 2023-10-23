@@ -46,12 +46,16 @@ rooms = {
             'Dining Room' : {
                 'west' : 'Hall',
                 'south': 'Garden',
+                'north': 'Attic',
                 'item' : 'potion'
                 },
             'Garden' : {
                 'north' : 'Dining Room'
-            }
-
+                },
+            'Attic' : {
+                'south' : 'Dining Room',
+                'item'  : 'sword'
+                },
         }
 
 # start the player in the Hall
@@ -106,7 +110,7 @@ while True:
         print('A monster has got you... GAME OVER!')
         break
     ## Define how a player can win
-    if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory:
-        print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
+    if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory and 'sword' in inventory:
+        print('You escaped the house with the ultra rare, key the royal sword, and magic potion... YOU WIN!')
         break
 
